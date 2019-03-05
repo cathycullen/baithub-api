@@ -8,6 +8,7 @@ gem 'sqlite3', '~> 1.3.6'
 gem 'puma', '~> 3.11'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bcrypt', '~> 3.1.12'
+gem 'jbuilder', '~> 2.5'
 
 group :development do
   gem 'listen', '>= 3.0.5', '< 3.2'
