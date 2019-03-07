@@ -1,10 +1,22 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "GET /users" do
-    it "works! (now write some real specs)" do
-      get users_path
-      expect(response).to have_http_status(200)
+
+  describe 'POST #create' do
+    let(:user) do
+    {
+      username: 'cathy',
+      password_digest: 'cathy'
+    }
+    end
+    it 'returns success with good parameters' do
+      post "/users", params: { user: { username: 'cathy', password_digest: 'cathy' } }
+      expect(response.status).to eq(201)
+    end
+
+    it 'fails with bad parameters' do
+      post "/users", params: { user: { username: 'cathy' } }
+      expect(response.status).to eq(422)
     end
   end
 end
