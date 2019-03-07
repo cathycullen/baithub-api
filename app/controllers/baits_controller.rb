@@ -4,7 +4,5 @@ class BaitsController < ApplicationController
   # GET /baits
   def index
     @baits = Bait.all
-
-    render json: @baits
   end
 end
